@@ -4,16 +4,16 @@ import {
   BrowserRouter as Router,
   Switch,
   Route,
-  Link
 } from "react-router-dom";
 import Home from './pages/Home/Home/Home';
+import Appointment from './pages/Appointment/Appointment/Appointment';
 function App() {
   return (
     <div className="App">
       <Router>
         <Switch>
-          <Route path="/about">
-            <Home />
+          <Route path="/appointment">
+            <Appointment></Appointment>
           </Route>
           <Route path="/home">
             <Home />
