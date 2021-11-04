@@ -13,8 +13,6 @@ const appointmentBanner = {
 }
 
 const AppointmentBanner = () => {
-
-
     return (
         <Box style={appointmentBanner} sx={{ flexGrow: 1 }}>
             <Grid container spacing={2}>
