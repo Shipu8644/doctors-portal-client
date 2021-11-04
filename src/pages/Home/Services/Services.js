@@ -7,26 +7,26 @@ import fluoride from '../../../images/fluoride.png';
 import cavity from '../../../images/cavity.png';
 import whitening from '../../../images/whitening.png';
 
-
+const services = [
+    {
+        name: 'Fluoride Treatment',
+        description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Sed culpa cumque enim! Voluptatibus aliquid expedita saepe accusantium itaque ducimus rem voluptas',
+        img: fluoride
+    },
+    {
+        name: 'Cavity Filling',
+        description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Sed culpa cumque enim! Voluptatibus aliquid expedita saepe accusantium itaque ducimus rem voluptas',
+        img: cavity
+    },
+    {
+        name: 'Teeth Whitening',
+        description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Sed culpa cumque enim! Voluptatibus aliquid expedita saepe accusantium itaque ducimus rem voluptas',
+        img: whitening
+    }
+]
 
 const Services = () => {
-    const services = [
-        {
-            name: 'Fluoride Treatment',
-            description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Sed culpa cumque enim! Voluptatibus aliquid expedita saepe accusantium itaque ducimus rem voluptas',
-            img: fluoride
-        },
-        {
-            name: 'Cavity Filling',
-            description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Sed culpa cumque enim! Voluptatibus aliquid expedita saepe accusantium itaque ducimus rem voluptas',
-            img: cavity
-        },
-        {
-            name: 'Teeth Whitening',
-            description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Sed culpa cumque enim! Voluptatibus aliquid expedita saepe accusantium itaque ducimus rem voluptas',
-            img: whitening
-        }
-    ]
+
     return (
         <Box sx={{ flexGrow: 1 }}>
             <Container>
