@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import initializeAuthentication from "../pages/Login/Firebase/firebase.init";
-import { getAuth, signInWithEmailAndPassword, signOut, onAuthStateChanged } from "firebase/auth";
+import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword, signOut, onAuthStateChanged } from "firebase/auth";
 
 initializeAuthentication();
 const useFirebase = () => {
@@ -8,6 +8,21 @@ const useFirebase = () => {
     const [user, setUser] = useState({});
     const auth = getAuth();
     const registerUser = (email, password) => {
+        createUserWithEmailAndPassword(auth, email, password)
+            .then((userCredential) => {
+                // Signed in 
+                const user = userCredential.user;
+                // ...
+            })
+            .catch((error) => {
+                const errorCode = error.code;
+                const errorMessage = error.message;
+                // ..
+            });
+
+    }
+    const loginUser = (email, password) => {
+        const auth = getAuth();
         signInWithEmailAndPassword(auth, email, password)
             .then((userCredential) => {
                 // Signed in 
@@ -43,6 +58,7 @@ const useFirebase = () => {
     return {
         user,
         registerUser,
+        loginUser,
         logout
 
     }
