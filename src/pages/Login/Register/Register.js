@@ -1,9 +1,10 @@
+import React from 'react';
 import { Container, Grid, TextField, Typography } from '@mui/material';
-import React, { useState } from 'react';
+import { useState } from 'react';
 import login from '../../../images/login.png';
 import Button from '@mui/material/Button';
 import { NavLink } from 'react-router-dom';
-const Login = () => {
+const Register = () => {
     const [loginData, setLoginData] = useState({});
     const handleOnChange = e => {
         const field = e.target.name;
@@ -13,8 +14,12 @@ const Login = () => {
         setLoginData(newLoginData);
         console.log(loginData);
     }
-    const handleLoginSubmit = (e) => {
-        alert("HEllo")
+    const handleRegisterSubmit = (e) => {
+        if (loginData.password !== loginData.password2) {
+            alert("Your password didn't match")
+            return;
+        }
+
         e.preventDefault();
     }
     return (
@@ -22,14 +27,15 @@ const Login = () => {
             <Grid container spacing={2}>
                 <Grid sx={{ mt: 10 }} item xs={12} md={6}>
                     <Typography variant="body1" gutterBottom>
-                        Login
+                        Register
                     </Typography>
-                    <form onSubmit={handleLoginSubmit}>
+                    <form onSubmit={handleRegisterSubmit}>
                         <TextField
                             sx={{ width: '75%', m: 1 }}
                             id="standard-basic"
                             label="Your Email"
                             name="email"
+                            type="email"
                             onChange={handleOnChange}
                             variant="standard" />
                         <TextField
@@ -40,12 +46,20 @@ const Login = () => {
                             name="password"
                             onChange={handleOnChange}
                             variant="standard" />
+                        <TextField
+                            sx={{ width: '75%', m: 1 }}
+                            id="standard-basic"
+                            label="Confirm Password"
+                            type="password"
+                            name="password2"
+                            onChange={handleOnChange}
+                            variant="standard" />
 
-                        <Button sx={{ width: '75%', m: 1 }} type='submit' variant="contained">Sign In</Button>
+                        <Button sx={{ width: '75%', m: 1 }} type='submit' variant="contained">Sign Up</Button>
                         <NavLink style={{
                             textDecoration: "none"
-                        }} to='/register'>
-                            <Button variant="text">New User? please Register</Button>
+                        }} to='/login'>
+                            <Button variant="text">Already Registered? please Login</Button>
                         </NavLink>
                     </form>
                 </Grid>
@@ -58,4 +72,4 @@ const Login = () => {
     );
 };
 
-export default Login;
+export default Register;

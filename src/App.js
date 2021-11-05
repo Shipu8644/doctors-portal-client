@@ -8,6 +8,7 @@ import {
 import Home from './pages/Home/Home/Home';
 import Appointment from './pages/Appointment/Appointment/Appointment';
 import Login from './pages/Login/Login/Login';
+import Register from './pages/Login/Register/Register';
 function App() {
   return (
     <div className="App">
@@ -21,6 +22,9 @@ function App() {
           </Route>
           <Route path="/login">
             <Login />
+          </Route>
+          <Route path="/register">
+            <Register />
           </Route>
           <Route exact path="/">
             <Home />
