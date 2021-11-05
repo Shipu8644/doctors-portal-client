@@ -2,11 +2,15 @@ import { Container, Grid, TextField, Typography, Alert, CircularProgress } from 
 import React, { useState } from 'react';
 import login from '../../../images/login.png';
 import Button from '@mui/material/Button';
-import { NavLink } from 'react-router-dom';
+import { NavLink, useLocation, useHistory } from 'react-router-dom';
 import useAuth from '../../../hooks/useAuth';
 const Login = () => {
     const [loginData, setLoginData] = useState({});
     const { user, loginUser, isLoading, authError } = useAuth();
+
+    const location = useLocation();
+    const history = useHistory();
+
     const handleOnChange = e => {
         const field = e.target.name;
         const value = e.target.value;
@@ -17,7 +21,7 @@ const Login = () => {
     }
     const handleLoginSubmit = (e) => {
         e.preventDefault();
-        loginUser(loginData.email, loginData.password);
+        loginUser(loginData.email, loginData.password, location, history);
     }
     return (
         <Container>
