@@ -6,7 +6,7 @@ const ContactForm = () => {
     return (
         <Box>
 
-            <Container>
+            <Container sx={{ mt: 8, mb: 5 }}>
                 <Typography variant="h6">CONTACT US</Typography>
                 <Typography variant="h4" fontWeight="500" >Always Connect With Us</Typography>
                 <form >
