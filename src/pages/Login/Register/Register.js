@@ -15,12 +15,13 @@ const Register = () => {
         console.log(loginData);
     }
     const handleRegisterSubmit = (e) => {
+        e.preventDefault();
         if (loginData.password !== loginData.password2) {
             alert("Your password didn't match")
             return;
         }
 
-        e.preventDefault();
+
     }
     return (
         <Container>
