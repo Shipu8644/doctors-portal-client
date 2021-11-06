@@ -19,7 +19,7 @@ const style = {
     boxShadow: 24,
     p: 4,
 };
-const BookingModal = ({ openBooking, handleBookingClose, booking, date }) => {
+const BookingModal = ({ openBooking, handleBookingClose, booking, date, setBookingSuccess }) => {
     const { name, time } = booking;
     const { user } = useAuth();
     const initialInfo = { patientName: user.displayName, email: user.email, phone: '' }
@@ -44,7 +44,21 @@ const BookingModal = ({ openBooking, handleBookingClose, booking, date }) => {
             serviceName: name,
             date: date.toLocaleDateString()
         }
-        console.log(appointment);
+        fetch(`http://localhost:5000/appointments`, {
+            method: "POST",
+            headers: {
+                "content-type": 'application/json'
+            },
+            body: JSON.stringify(appointment)
+        })
+            .then(res => res.json())
+            .then(data => {
+                if (data.insertedId) {
+                    setBookingSuccess(true);
+                    handleBookingClose();
+                }
+            })
+
         handleBookingClose();
 
     }
