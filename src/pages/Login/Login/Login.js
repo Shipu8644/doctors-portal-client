@@ -6,7 +6,7 @@ import { NavLink, useLocation, useHistory } from 'react-router-dom';
 import useAuth from '../../../hooks/useAuth';
 const Login = () => {
     const [loginData, setLoginData] = useState({});
-    const { user, loginUser, isLoading, authError } = useAuth();
+    const { user, loginUser, signInWithGoogle, isLoading, authError } = useAuth();
 
     const location = useLocation();
     const history = useHistory();
@@ -53,10 +53,12 @@ const Login = () => {
                         }} to='/register'>
                             <Button variant="text">New User? please Register</Button>
                         </NavLink>
+                        {isLoading && <CircularProgress />}
+                        {user?.email && <Alert severity="success">Login Successfully</Alert>}
+                        {authError && <Alert severity="error">{authError}</Alert>}
                     </form>
-                    {isLoading && <CircularProgress />}
-                    {user?.email && <Alert severity="success">Login Successfully</Alert>}
-                    {authError && <Alert severity="error">{authError}</Alert>}
+
+
                 </Grid>
                 <Grid item xs={12} md={6}>
                     <img style={{ width: "100%" }} src={login} alt="" />
