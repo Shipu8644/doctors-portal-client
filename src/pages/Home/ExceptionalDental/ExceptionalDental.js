@@ -27,6 +27,7 @@ const ExceptionalDental = () => {
                             Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium labore tempora laborum nisi eaque atque debitis non eum voluptatem itaque necessitatibus doloribus voluptates quis adipisci similique ducimus nobis saepe, corporis maiores tempore laboriosam quibusdam laudantium. Nisi id nulla eos similique corrupti nam temporibus voluptatem nostrum quod, a optio pariatur exercitationem ducimus saepe reiciendis cum vel ad praesentium doloremque at corporis eligendi architecto alias ex. Soluta quisquam odio id quam. Fugit?
                         </Typography>
                         <Button variant="contained" style={{ backgroundColor: '#5CE7ED' }}>Learn More</Button>
+
                     </Box>
                 </Grid>
 
