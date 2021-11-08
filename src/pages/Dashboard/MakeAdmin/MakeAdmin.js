@@ -1,8 +1,9 @@
-import { Button, TableBody, TextField } from '@mui/material';
+import { Alert, Button, TableBody, TextField } from '@mui/material';
 import React, { useState } from 'react';
 
 const MakeAdmin = () => {
     const [email, setEmail] = useState('');
+    const [success, setSuccess] = useState(false);
 
     const handleOnBlur = (e) => {
         const value = e.target.value;
@@ -20,7 +21,15 @@ const MakeAdmin = () => {
         })
             .then(res => res.json())
             .then(data => {
-                console.log(data);
+                if (data.modifiedCount) {
+                    console.log(data);
+                    setSuccess(true);
+
+                }
+                else {
+                    alert('User not found')
+                    e.target.reset();
+                }
             })
 
     }
@@ -29,14 +38,17 @@ const MakeAdmin = () => {
             <h2>Make an Admin</h2>
             <form onSubmit={handleAdminSubmit}>
                 <TextField
+                    sx={{ width: "40%", m: 1 }}
                     onBlur={handleOnBlur}
                     type="email"
                     label="Email"
-                    variant="standard" />
+                    variant="standard"
+                />
                 <br />
                 <br />
                 <Button type='submit' variant="contained">Make Admin</Button>
             </form>
+            {success && <Alert severity="success">Made Admin Successfully</Alert>}
         </div>
     );
 };

@@ -27,6 +27,7 @@ import {
 import DashboardHome from '../DashboardHome/DashboardHome';
 import MakeAdmin from '../MakeAdmin/MakeAdmin';
 import AddDoctor from '../AddDoctor/AddDoctor';
+import useAuth from '../../../hooks/useAuth';
 
 
 const drawerWidth = 200;
@@ -34,8 +35,10 @@ const drawerWidth = 200;
 function Dashboard(props) {
     const { window } = props;
     const [mobileOpen, setMobileOpen] = React.useState(false);
-
     let { path, url } = useRouteMatch();
+
+    const { admin } = useAuth();
+
     const handleDrawerToggle = () => {
         setMobileOpen(!mobileOpen);
     };
@@ -46,8 +49,10 @@ function Dashboard(props) {
             <Divider />
             <Link style={{ textDecoration: 'none', color: 'Green' }} to='/appointment'> <Button color="inherit">Appointment</Button></Link>
             <Link style={{ textDecoration: 'none', color: 'Green' }} to={`${url}`}> <Button color="inherit">Dashboard</Button></Link>
-            <Link style={{ textDecoration: 'none', color: 'Green' }} to={`${url}/makeAdmin`}> <Button color="inherit">Make Admin</Button></Link>
-            <Link style={{ textDecoration: 'none', color: 'Green' }} to={`${url}/addDoctor`}> <Button color="inherit">Add Doctor</Button></Link>
+            {admin && <Box>
+                <Link style={{ textDecoration: 'none', color: 'Green' }} to={`${url}/makeAdmin`}> <Button color="inherit">Make Admin</Button></Link>
+                <Link style={{ textDecoration: 'none', color: 'Green' }} to={`${url}/addDoctor`}> <Button color="inherit">Add Doctor</Button></Link>
+            </Box>}
             <List>
                 {['Inbox', 'Starred', 'Send email', 'Drafts'].map((text, index) => (
                     <ListItem button key={text}>
