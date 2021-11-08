@@ -44,7 +44,7 @@ const BookingModal = ({ openBooking, handleBookingClose, booking, date, setBooki
             serviceName: name,
             date: date.toLocaleDateString()
         }
-        fetch(`http://localhost:5000/appointments`, {
+        fetch(`https://afternoon-bayou-81687.herokuapp.com/appointments`, {
             method: "POST",
             headers: {
                 "content-type": 'application/json'
