@@ -7,7 +7,7 @@ import { Button, Typography } from '@mui/material';
 
 const appointmentBanner = {
     background: `url(${bg})`,
-    backgroundColor: 'rgba(45, 58, 74, 0.9)',
+    backgroundColor: 'rgba(45, 58, 74, 0.7)',
     backgroundBlendMode: 'darken, luminosity',
     marginTop: 175
 }
