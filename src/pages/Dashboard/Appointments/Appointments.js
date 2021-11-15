@@ -24,6 +24,7 @@ const Appointments = ({ date }) => {
     }, [date, user.email, token])
     return (
         <div>
+
             <h2>Appointments: {appointments.length}</h2>
             <TableContainer component={Paper}>
                 <Table sx={{}} aria-label="Appointment table">

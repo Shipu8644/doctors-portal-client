@@ -3,7 +3,7 @@ import Box from '@mui/material/Box';
 import Grid from '@mui/material/Grid';
 import doctor from '../../../images/doctor.png';
 import bg from '../../../images/appointment-bg.png';
-import { Button, Typography } from '@mui/material';
+import { Button, Container, Typography } from '@mui/material';
 
 const appointmentBanner = {
     background: `url(${bg})`,
@@ -25,6 +25,7 @@ const AppointmentBanner = () => {
                     justifyContent: "start",
                     alignItems: 'center',
                     textAlign: 'left'
+
                 }}>
                     <Box>
                         <Typography variant="h6" sx={{ mb: 5 }} style={{ color: '#5CE7ED' }}>
@@ -33,7 +34,7 @@ const AppointmentBanner = () => {
                         <Typography variant="h4" style={{ color: "white" }}>
                             Make an Appointment Today
                         </Typography>
-                        <Typography variant="h6" sx={{ my: 5 }} style={{ color: "white", fontSize: 14, fontWeight: 300 }}>
+                        <Typography variant="h6" sx={{ my: 4 }} style={{ color: "white", fontSize: 14, fontWeight: 300 }}>
                             Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eligendi, doloremque quae. Similique amet tempore ipsum aut nemo maiores vitae magni.
                         </Typography>
                         <Button variant='contained' style={{ backgroundColor: '#5CE7ED' }}>
