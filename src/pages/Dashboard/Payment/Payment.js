@@ -7,27 +7,28 @@ const stripePromise = loadStripe('pk_test_51Jw67GD1wBtFKjaWHP89DwViajzGVR37uCq6q
 
 
 const Payment = () => {
-    const { appointId } = useParams();
+    const { appointmentId } = useParams();
     const [appointment, setAppointment] = useState({});
 
 
     useEffect(() => {
-        fetch(`https://afternoon-bayou-81687.herokuapp.com/appointments/${appointId}`)
+        fetch(`https://afternoon-bayou-81687.herokuapp.com/appointments/${appointmentId}`)
             .then(res => res.json())
             .then(data => setAppointment(data))
-    }, [appointId])
+    }, [appointmentId])
 
 
     return (
         <div>
             <h2>Please pay for: {appointment.patientName} for {appointment.serviceName}</h2>
             <h4>Pay :${appointment.price}</h4>
-            <Elements stripe={stripePromise}>
+
+            {appointment?.price && <Elements stripe={stripePromise}>
                 <CheckoutForm
                     appointment={appointment}
 
                 />
-            </Elements>
+            </Elements>}
         </div>
     );
 };

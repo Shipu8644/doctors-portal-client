@@ -2,7 +2,7 @@
 import './App.css';
 import {
   BrowserRouter as Router,
-  Switch,
+  Routes,
   Route,
 } from "react-router-dom";
 import Home from './pages/Home/Home/Home';
@@ -12,34 +12,51 @@ import Register from './pages/Login/Register/Register';
 import AuthProvider from './contexts/AuthProvider';
 import PrivateRoute from '../src/pages/Login/PrivateRoute/PrivateRoute'
 import Dashboard from './pages/Dashboard/Dashboard/Dashboard';
+import DashboardHome from './pages/Dashboard/DashboardHome/DashboardHome';
+import Payment from './pages/Dashboard/Payment/Payment';
+import AdminRoute from './pages/Login/AdminRoute/AdminRoute';
+import MakeAdmin from './pages/Dashboard/MakeAdmin/MakeAdmin';
+import AddDoctor from './pages/Dashboard/AddDoctor/AddDoctor';
 function App() {
   return (
     <div className="App">
       <AuthProvider>
         <Router>
-          <Switch>
-            <PrivateRoute path="/appointment">
-              <Appointment></Appointment>
-            </PrivateRoute>
-            <PrivateRoute path="/dashboard">
+          <Routes>
+            <Route path="/appointment" element={<PrivateRoute>
+              <Appointment />
+            </PrivateRoute>}>
+            </Route>
+
+            <Route path="/dashboard" element={<PrivateRoute>
               <Dashboard />
-            </PrivateRoute>
-            <Route path="/home">
-              <Home />
+            </PrivateRoute>}>
+              <Route exact path="/dashboard" element={<DashboardHome></DashboardHome>}>
+              </Route>
+              <Route path={`/dashboard/payment/:appointmentId`} element={<Payment></Payment>}>
+
+              </Route>
+              <Route path={`/dashboard/makeAdmin`} element={<AdminRoute>
+                <MakeAdmin></MakeAdmin>
+              </AdminRoute>}>
+              </Route>
+              <Route path={`/dashboard/addDoctor`} element={<AdminRoute>
+                <AddDoctor></AddDoctor>
+              </AdminRoute>}>
+              </Route>
             </Route>
-            <Route path="/login">
-              <Login />
+
+            <Route path="/home" element={<Home />}>
             </Route>
-            <Route path="/register">
-              <Register />
+            <Route path="/login" element={<Login />}>
             </Route>
-            <Route exact path="/">
-              <Home />
+            <Route path="/register" element={<Register />}>
             </Route>
-          </Switch>
+            <Route exact path="/" element={<Home />}>
+            </Route>
+          </Routes>
         </Router>
       </AuthProvider>
-
     </div>
   );
 }

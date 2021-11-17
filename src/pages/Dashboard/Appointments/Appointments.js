@@ -50,7 +50,7 @@ const Appointments = ({ date }) => {
                                 <TableCell align="left">{row.time}</TableCell>
                                 <TableCell align="left">{row.serviceName}</TableCell>
                                 <TableCell align="left">{row.payment ? "paid" :
-                                    <Link to={`dashboard/payment/${row._id}`}><button>Pay</button></Link>
+                                    <Link to={`/dashboard/payment/${row._id}`}><button>Pay</button></Link>
                                 }</TableCell>
 
                             </TableRow>
