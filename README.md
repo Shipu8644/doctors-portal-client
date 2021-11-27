@@ -1,70 +1,24 @@
-# Getting Started with Create React App
+# SquaDrone
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Live site link of [DoctorsPortal](https://doctors-portal-ea4d9.web.app/).
 
-## Available Scripts
+## Description
+ This is a Medical Services Provider
+ Website named DoctorsPortal.
 
-In the project directory, you can run:
+ Patients can take the appointments and get their desirable doctor from Doctors Portal. There are various medical services are available that most of the patients usually need. If Users need any of the specific services then he/she can check all the available appointments from Appointment page. If any available  appointments match his/her requirements users can easily book from this website. DoctorsPortal has 3 modes for the visitors: Guest mode, Users mode and Admin mode.
 
-### `npm start`
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
-
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
-
-### `npm test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+* Users and Visitors can see all the services  we have.
+* Only users can check available appointments from the Appointments page, not the guests.
+* If Any guests want to be a user then he/she need to register first.
+* After registration users can login with their given name and password. Google login system is also available.
+* Users can book their necessary appointments with a specific date. For selecting the specific date, calender is provided in the Appointment page.
+Therefore it becomes easy for the user to find their appointments on the specific date. 
+* Users have their personal dashboard where he/she can check all the appointments they book so far.
+* If Users has not paid yet, there is a online payment system available for them. By this Users can easily give the payment using online payment system.
+* If users already paid for specific appointment on specific date, then they can easily know that be seeing paid on Appointments table.
+* Admin can add a new doctor easily. After Adding this doctor will be shown on the home page.
+* Admin has the power to make a new admin from the users.
+* Front-end and Back-end Development using
+Reactjs, Nodejs, MongoDb and Firebase authentication system used for registration and login.
