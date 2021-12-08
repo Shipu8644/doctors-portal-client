@@ -16,7 +16,7 @@ const AddDoctor = () => {
         formData.append('name', name);
         formData.append('email', email);
         formData.append('image', image);
-
+        console.log(formData);
         fetch('https://afternoon-bayou-81687.herokuapp.com/doctors', {
             method: 'POST',
             body: formData

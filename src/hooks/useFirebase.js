@@ -20,6 +20,7 @@ const useFirebase = () => {
         setIsLoading(true);
         createUserWithEmailAndPassword(auth, email, password)
             .then((userCredential) => {
+                alert('Registration Successful, Welcome to Doctors Portal');
                 setAuthError('');
                 const newUser = { email, displayName: name }
                 setUser(newUser);
